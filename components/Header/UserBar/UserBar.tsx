@@ -1,23 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import { List, ListItem, UserBarStyled, ListItemLink } from "../../styles/Header.styled";
+import { List, ListItem, UserBarStyled, ListItemLink } from "../../../styles/Header.styled";
 
-import styles from "./Header.module.scss";
-import { Button } from "../../styles/Button.styled";
+import styles from "../Header.module.scss";
+
+import { Button } from "../../../styles/Button.styled";
+import { UserBarSearch } from "./UserBarSearch";
 
 export const UserBar: React.FC = () => {
   return (
     <UserBarStyled>
       <List>
-        <ListItem>
-          <Link href="/" passHref>
-            <ListItemLink>
-              <svg viewBox="0 0 18 18" className={styles.searchSvg}>
-                <path d="M18.002 17.324l-.678.678-4.022-4.022A7.96 7.96 0 0 1 8 16a8 8 0 1 1 8-8c0 2.037-.767 3.89-2.021 5.302l4.023 4.022zM15 8A7 7 0 1 0 1 8a7 7 0 0 0 14 0z"></path>
-              </svg>
-            </ListItemLink>
-          </Link>
-        </ListItem>
+        <UserBarSearch />
         <ListItem borderLeft={true}>
           <Link href="/" passHref>
             <ListItemLink>
@@ -27,6 +21,7 @@ export const UserBar: React.FC = () => {
                   fillRule="evenodd"
                 ></path>
               </svg>
+              <span className={styles.userBar__description}>моя книга рецептов</span>
             </ListItemLink>
           </Link>
         </ListItem>

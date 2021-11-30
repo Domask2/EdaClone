@@ -5,15 +5,15 @@ import { Container } from "../../styles/Container.styled";
 import styles from "./Header.module.scss";
 
 import { Logo } from "./Logo";
-import { Nav } from "./Nav";
-import { UserBar } from "./UserBar";
+import { Navigation } from './Navigation';
+import { UserBar } from "./UserBar/UserBar";
 
 export const Header: React.FC = () => {
   return (
     <Container>
       <StyledHeader>
         <Logo />
-        <Nav />
+        <Navigation />
         <UserBar/>
       </StyledHeader>
     </Container>

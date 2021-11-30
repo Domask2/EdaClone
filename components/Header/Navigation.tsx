@@ -6,7 +6,7 @@ import styles from "./Header.module.scss";
 
 const menu = ['Рецепты', 'ЖУРНАЛ «ЕДА» №74 (136)', 'ШКОЛА «ЕДЫ»', 'Идеи', 'Авторы', 'База'];
 
-export const Nav: React.FC = () => {
+export const Navigation: React.FC = () => {
   return (
     <NavStyled>
       <List>
