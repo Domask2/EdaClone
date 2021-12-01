@@ -7,15 +7,19 @@ import {
 
 import styles from "./Header.module.scss";
 
+type TName = {
+  text: string,
+  path: string
+}
 interface NavItemLinkProps {
-  name: string
+  name: TName
 }
 
 export const NavItemLink: React.FC<NavItemLinkProps> = ({name}) => {
   return (
     <ListItem className={styles.listItem}>
-      <Link href="/recepty" passHref>
-        <ListItemLink>{name}</ListItemLink>
+      <Link href={name.path} passHref>
+        <ListItemLink>{name.text}</ListItemLink>
       </Link>
     </ListItem>
   );

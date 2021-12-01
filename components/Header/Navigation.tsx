@@ -4,7 +4,14 @@ import { NavStyled, List, ListItem, ListItemLink } from "../../styles/Header.sty
 
 import styles from "./Header.module.scss";
 
-const menu = ['Рецепты', 'ЖУРНАЛ «ЕДА» №74 (136)', 'ШКОЛА «ЕДЫ»', 'Идеи', 'Авторы', 'База'];
+const menu = [
+  { text: "Рецепты", path: "/recepty" },
+  { text: "ЖУРНАЛ «ЕДА» №74 (136)",  path: "/journal" },
+  { text: "ШКОЛА «ЕДЫ»", path: "/school" },
+  { text: "Авторы", path: "/author" },
+  { text: "База", path: "/base" },
+
+];
 
 export const Navigation: React.FC = () => {
   return (
