@@ -3,7 +3,6 @@ import Link from "next/link";
 import { List, ListItem, UserBarStyled, ListItemLink } from "../../../styles/Header.styled";
 
 import styles from "../Header.module.scss";
-
 import { Button } from "../../../styles/Button.styled";
 import { UserBarSearch } from "./UserBarSearch";
 
