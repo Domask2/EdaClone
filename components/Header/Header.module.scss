@@ -58,7 +58,7 @@
 .wrapperForm {
   flex-wrap: wrap;
   position: absolute;
-  width: calc(100vw - 115px);
+  width: 100%;
   top: 0;
   left: 115px;
   background: #fff;
@@ -70,10 +70,18 @@
     content:'';
     position: absolute;
     bottom: 0;
-    left: -120px;
+    left: 0px;
     width: 100vw;
     height: 1px;
     background-color: #000;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.unVisible {
+  opacity: 0;
 }
 
 .searchBar {
@@ -112,4 +120,28 @@
     width: 17px;
     height: 17px;
   }
+
+  .searchOverlay {
+    position: absolute;
+    z-index: 950;
+    min-width: 100%;
+    background: #000;
+    transition: all .4s ease-out;
+    overflow: hidden;
+    transform: translate3d(0);
+  }
+
+  .unVisibleSearch {
+    height: 0px;
+    width: 1000px;
+    opacity: 0;
+  }
+
+  .visibleSearch {
+    top: 80px;
+    height: calc( 100vh - 80px);
+    width: 1000px;
+    opacity: 0.5;
+  }
+
 }

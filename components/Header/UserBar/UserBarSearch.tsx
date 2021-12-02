@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ListItem, ListItemLink } from "../../../styles/Header.styled";
-
+import clsx from "clsx";
 import styles from "../Header.module.scss";
 
 export const UserBarSearch: React.FC = () => {
@@ -29,8 +29,8 @@ export const UserBarSearch: React.FC = () => {
               <svg viewBox="0 0 16.18 16.18" className={styles.cls1}>
               <path d="M16.194 15.486l-.708.708L8.09 8.797.694 16.194l-.708-.708L7.383 8.09-.014.694l.708-.707L8.09 7.383l7.396-7.396.708.707L8.797 8.09l7.397 7.396z"></path></svg>
             </div>
-            
           </form>
+          <div className={clsx(styles.searchOverlay, search && styles.visibleSearch, !search && styles.unVisibleSearch)}></div>
         </div>
       ) : (
         <div onClick={handleSearch}>
