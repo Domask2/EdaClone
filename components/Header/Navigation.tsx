@@ -3,6 +3,7 @@ import { NavItemLink } from "./NavItemLink";
 import { List } from "../List";
 
 import styled from "styled-components";
+import { Logo } from "./Logo";
 
 const menu = [
   { text: "Рецепты", path: "/recepty" },
@@ -19,12 +20,19 @@ export const NavStyled = styled.nav`
   flex-grow: 1;
   margin-top: 20px;
   margin-bottom: 20px;
+  
+  @media (max-width: 1000px) {
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-content: center;
+  }
 `;
 
 export const Navigation: React.FC = () => {
   return (
     <NavStyled>
       <List>
+        <Logo/>
         {menu.map((name, id) => (
           <NavItemLink key={id} name={name} />
         ))}

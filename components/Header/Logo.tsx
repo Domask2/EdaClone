@@ -5,7 +5,7 @@ import { StyledSvg } from "../Svg";
 import styled from "styled-components";
 
 const StyledLinkLogo = styled.a`
-  padding: 0 30px;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
 `;

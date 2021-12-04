@@ -13,18 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.colors.body};
     color :${({ theme }) => theme.colors.bodyText};
     font-family: 'Roboto', sans-serif;
+    max-height: 1e6em
   }
 
-  a {
-    color :${({ theme }) => theme.colors.nav};
-    text-decoration: none;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  li {
-    list-style-type: none;
-  }
 `

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { ListItem } from "../List";
-import { ListItemLink } from "../../styles/Header.styled";
+import { ListItemLink } from "../Links";
 
 type TName = {
   text: string;
