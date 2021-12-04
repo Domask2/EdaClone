@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { ListItem, ListItemLink } from "../../../styles/Header.styled";
+import { ListItemLink } from "../../../styles/Header.styled";
+import { ListItem } from "../../List";
 import clsx from "clsx";
 import styles from "../Header.module.scss";
 

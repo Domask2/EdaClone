@@ -1,58 +1,10 @@
-.logo {
-  padding: 0 30px;
-  display: inline-flex;
-  align-items: center;
-}
+
 
 .searchSvg {
   width: 17px;
   height: 17px;
   fill: #24af30;
   margin-right: 11px;
-}
-
-.bookmarkSvg {
-  width: 13px;
-  height: 19px;
-  fill: #af212b;
-  margin-right: 11px;
-}
-
-.userBarSvg {
-  width: 22px;
-  height: 21px;
-  fill: #24af30;
-  margin-right: 6px;
-  margin-top: 2px;
-}
-
-.userBar__text {
-  cursor: pointer;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 1px;
-  font-size: 8px;
-  transition: color 0.3s ease-in;
-
-  &:hover {
-    color: #24af30;
-  }
-}
-
-.userBar__description {
-  display: block;
-  font-size: 8px;
-  letter-spacing: 1px;
-
-  @media (max-width: 1280px) {
-    font-size: 0;
-    line-height: 0;
-    letter-spacing: 0;
-  }
-}
-
-.noPad {
-  padding-left: 0 !important;
 }
 
 .wrapperForm {

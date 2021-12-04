@@ -1,23 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import {
-  ListItem,
-  ListItemLink,
-} from "../../styles/Header.styled";
 
-import styles from "./Header.module.scss";
+import { ListItem } from "../List";
+import { ListItemLink } from "../../styles/Header.styled";
 
 type TName = {
-  text: string,
-  path: string
-}
+  text: string;
+  path: string;
+};
 interface NavItemLinkProps {
-  name: TName
+  name: TName;
 }
 
-export const NavItemLink: React.FC<NavItemLinkProps> = ({name}) => {
+export const NavItemLink: React.FC<NavItemLinkProps> = ({ name }) => {
   return (
-    <ListItem className={styles.listItem}>
+    <ListItem>
       <Link href={name.path} passHref>
         <ListItemLink>{name.text}</ListItemLink>
       </Link>
