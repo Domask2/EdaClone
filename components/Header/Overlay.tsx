@@ -31,7 +31,7 @@ export const StyledOverlay = styled.div<StyledOverlayProps>`
 
   animation: ${(props) => props.search && fadeIn} 1s linear;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 941px) {
     top: ${(props) => (props.search ? "100px" : "0")};
   }
 `;

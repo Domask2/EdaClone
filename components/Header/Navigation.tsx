@@ -19,10 +19,8 @@ export const NavStyled = styled.nav`
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  margin-top: 20px;
-  margin-bottom: 20px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 941px) {
     margin-top: 0;
     margin-bottom: 0;
     justify-content: center;

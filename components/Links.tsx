@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface ListItemLinkProps {
-  $mode: string;
+  $mode?: string;
 }
 
 export const ListItemLink = styled.a<ListItemLinkProps>`

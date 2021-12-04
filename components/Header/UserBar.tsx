@@ -20,7 +20,7 @@ export const UserBarStyled = styled.nav`
     padding: 0 18px;
     font-size: 11px;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 941px) {
     margin-top: 0;
     margin-bottom: 20px;
     justify-content: center;
@@ -57,7 +57,7 @@ export const UserBar: React.FC<UserBarProps> = ({ searchOpen }) => {
                 />
               </StyledSvg>
 
-              <StyledSpan  hideMedia="1280px">моя книга рецептов</StyledSpan>
+              <StyledSpan  hideMedia="1200px">моя книга рецептов</StyledSpan>
             </ListItemLink>
           </Link>
         </ListItem>

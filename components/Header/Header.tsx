@@ -6,6 +6,7 @@ import { SearchForm } from "./SearchForm";
 import { Overlay } from "./Overlay";
 
 import styled from "styled-components";
+import { Filter } from "./Filter";
 
 export const StyledHeader = styled.header`
   background: ${({ theme }) => theme.colors.header};
@@ -20,8 +21,9 @@ export const Container = styled.div`
   height: 80px;
   width: 100%;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 941px) {
     height: 120px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -52,6 +54,7 @@ export const Header: React.FC = () => {
             <>
               <Navigation />
               <UserBar searchOpen={searchOpen} />
+              <Filter />
             </>
           )}
 
