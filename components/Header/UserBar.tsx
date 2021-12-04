@@ -12,6 +12,7 @@ import styled from "styled-components";
 export const UserBarStyled = styled.nav`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   flex-grow: 1;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -43,7 +44,7 @@ export const UserBar: React.FC<UserBarProps> = ({ searchOpen }) => {
 
         <ListItem borderLeft={true}>
           <Link href="/" passHref>
-            <ListItemLink>
+            <ListItemLink $mode='light'>
               <StyledSvg
                 viewBox="0 0 9 14"
                 width="13px"
@@ -56,7 +57,7 @@ export const UserBar: React.FC<UserBarProps> = ({ searchOpen }) => {
                 />
               </StyledSvg>
 
-              <StyledSpan hideMedia="1280px">моя книга рецептов</StyledSpan>
+              <StyledSpan  hideMedia="1280px">моя книга рецептов</StyledSpan>
             </ListItemLink>
           </Link>
         </ListItem>

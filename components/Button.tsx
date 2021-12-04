@@ -13,6 +13,7 @@ export const Button = styled.button<ButtonProps>`
   background: transparent;
   font: 8px/38px Roboto, sans-serif;
   letter-spacing: 1px;
+  transition: color 0.3s ease-in;
   text-transform: uppercase;
   &:hover {
     color: #24af30;
