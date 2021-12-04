@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
+interface ListItemProps {
+  borderLeft?: boolean;
+}
+
 export const List = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
   transition: all 0.3s ease-out;
 `;
-
-interface ListItemProps {
-  borderLeft?: boolean;
-}
 
 export const ListItem = styled.li<ListItemProps>`
   display: block;
@@ -19,6 +19,7 @@ export const ListItem = styled.li<ListItemProps>`
   padding: 0 10px;
   border-left: ${(props) => (props.borderLeft ? "1px solid #d9d9d9;" : "0")};
   list-style-type: none;
+  
   &:last-child {
     padding-left: 0;
   }

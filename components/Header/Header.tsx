@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { Navigation } from "./Navigation";
 import { UserBar } from "./UserBar";
 import { SearchForm } from "./SearchForm";
+import { Overlay } from "./Overlay";
 
 import styled from "styled-components";
-import { Overlay } from "./Overlay";
 
 export const StyledHeader = styled.header`
   background: ${({ theme }) => theme.colors.header};
@@ -61,9 +61,6 @@ export const Header: React.FC = () => {
               <Overlay />
             </>
           )}
-
-
-          
         </NavConteiner>
       </Container>
     </StyledHeader>

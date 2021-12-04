@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+
+import { Logo } from "./Logo";
 import { Input } from "../Input";
 import { StyledSvg } from "../Svg";
 
-import styles from "./Header.module.scss";
-import { Logo } from "./Logo";
+import styled from "styled-components";
 
 interface SearchFormProps {
   searchClose: () => void;
@@ -60,7 +60,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchClose }) => {
           autoComplete="off"
           placeholder="Поиск по рецептам, ингредиентам, статьям и в журнале «Еда»"
         />
- 
 
         <StyledSvg
           onClick={searchClose}
