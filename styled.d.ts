@@ -9,6 +9,13 @@ declare module "styled-components" {
       bodyText: string
       headerText: string
       nav: string,
+      borderMenu: string,
+      borderSelect: string,
+      borderMenuHover: string,
+      borderSelectHover: string,
     };
+    fontBtn: {
+      select: string
+    }
   }
 }

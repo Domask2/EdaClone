@@ -41,7 +41,7 @@ export const ToogleFilter: React.FC<ToogleFilterProps> = ({handleToggleFilter}) 
     <ToggleWrapper onClick={handleToggleFilter}>
       <StyledSpanDivider>
         <StyledSpanPlus>+</StyledSpanPlus>
-        Подбор рецептов
+          Подбор рецептов
       </StyledSpanDivider>
     </ToggleWrapper>
   );

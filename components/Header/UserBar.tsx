@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
+import { theme } from "../../theme";
+
 import { ListItemLink } from "../Links";
 import { List, ListItem } from "../List";
 import { Button } from "../Button";
@@ -78,7 +80,12 @@ export const UserBar: React.FC<UserBarProps> = ({ searchOpen }) => {
           </Button>
         </ListItem>
         <ListItem>
-          <Button border>Добавить рецепт</Button>
+          <Button 
+            TT
+            hoverColor={theme.colors.borderMenuHover} 
+            border={theme.colors.borderMenu}>
+              Добавить рецепт
+          </Button>
         </ListItem>
       </List>
     </UserBarStyled>
