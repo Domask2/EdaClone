@@ -18,12 +18,9 @@ export const Container = styled.div`
   align-items: center;
   margin-right: auto;
   margin-left: auto;
-  height: 80px;
   width: 100%;
-
   @media (max-width: 941px) {
-    height: 120px;
-    padding-bottom: 20px;
+
   }
 `;
 

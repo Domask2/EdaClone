@@ -1,5 +1,6 @@
-import React from "react";
-import { ToogleFilterMenu } from "./ToogleFilterMenu";
+import React, { useState } from "react";
+import { ToogleFilter } from "./ToogleFilter";
+import { FilterMenu } from "./FilterMenu";
 
 import styled from "styled-components";
 
@@ -18,11 +19,19 @@ export const FilterTopLine = styled.div`
 `;
 
 export const Filter: React.FC = () => {
+  const [toggleFilter, setToggleFilter] = useState(true);
+
+  const handleToggleFilter = () => {
+    setToggleFilter(!toggleFilter);
+    console.log('filter');
+  }
+
   return (
     <FilterWrapper>
       <FilterTopLine>
-        <ToogleFilterMenu />
+        <ToogleFilter handleToggleFilter={handleToggleFilter}/>
       </FilterTopLine>
+      <FilterMenu toggleFilter={toggleFilter}/>
     </FilterWrapper>
   );
 };

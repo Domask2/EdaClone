@@ -21,7 +21,7 @@ export const NavStyled = styled.nav`
   flex-grow: 1;
 
   @media (max-width: 941px) {
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 0;
     justify-content: center;
   }

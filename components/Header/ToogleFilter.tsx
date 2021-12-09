@@ -32,9 +32,13 @@ export const ToggleWrapper = styled.div`
   }
 `;
 
-export const ToogleFilterMenu: React.FC = () => {
+interface ToogleFilterProps {
+  handleToggleFilter: () => void;
+}
+
+export const ToogleFilter: React.FC<ToogleFilterProps> = ({handleToggleFilter}) => {
   return (
-    <ToggleWrapper>
+    <ToggleWrapper onClick={handleToggleFilter}>
       <StyledSpanDivider>
         <StyledSpanPlus>+</StyledSpanPlus>
         Подбор рецептов
