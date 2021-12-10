@@ -19,7 +19,7 @@ export const FilterTopLine = styled.div`
 `;
 
 export const Filter: React.FC = () => {
-  const [toggleFilter, setToggleFilter] = useState(true);
+  const [toggleFilter, setToggleFilter] = useState(false);
 
   const handleToggleFilter = () => {
     setToggleFilter(!toggleFilter);

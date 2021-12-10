@@ -6,7 +6,7 @@ import { Button } from "./Button";
 import { MdKeyboardArrowDown as IconDown } from 'react-icons/md';
 
 interface SelectButtonProps {
-  children: string;
+  children: any;
 }
 
 export const SelectButtonStyled = styled.div<SelectButtonProps>`
