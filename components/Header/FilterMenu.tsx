@@ -54,18 +54,11 @@ export const FilterMenu: React.FC<FilterMenuProps> = ({ toggleFilter }) => {
         <FilterContainer>
                 <FilterGroup>
                   <FilterSelector/>
-                    {/*<SelectButton>*/}
-                    {/*  {'Любая категория'}*/}
-                    {/*</SelectButton>*/}
-                    {/*<SelectButton>*/}
-                    {/*  {'Любое блюдо'}*/}
-                    {/*</SelectButton>*/}
-                    {/*<SelectButton>*/}
-                    {/*  {'Любая кухня'}*/}
-                    {/*</SelectButton>*/}
-                    {/*<SelectButton>*/}
-                    {/*  {'Любое меню'}*/}
-                    {/*</SelectButton>*/}
+                  <FilterSelector/>
+                  <FilterSelector/>
+                  <FilterSelector/>
+                  <FilterSelector/>
+
                 </FilterGroup>
         </FilterContainer>
       )}
