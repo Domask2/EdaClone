@@ -23,7 +23,6 @@ export const Filter: React.FC = () => {
 
   const handleToggleFilter = () => {
     setToggleFilter(!toggleFilter);
-    console.log('filter');
   }
 
   return (
