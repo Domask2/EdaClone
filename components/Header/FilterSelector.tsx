@@ -7,16 +7,6 @@ type MyOptionType = {
   value: string;
 };
 
-// const options: MyOptionType[] = [
-//   { value: "all", label: "Любая категория" },
-//   { value: "semis", label: "Загатовки" },
-//   { value: "main", label: "Основные блюда" },
-//   { value: "pasta", label: "Паста и пицца" },
-//   { value: "snacks", label: "Закуски" },
-//   { value: "soup", label: "Супы" },
-//   { value: "salad", label: "Салаты" }
-// ];
-
 const selectStyle: StylesConfig<MyOptionType> = {
   control: (provided, state) => ({
     ...provided,
@@ -97,28 +87,75 @@ const selectStyle: StylesConfig<MyOptionType> = {
   })
 };
 
-interface FilterSelectorProps {
-  optionsMenu?: MyOptionType[],
-  filterMenu: any,
-  disabled?: boolean,
-  placeholder: string,
-  value?: any
-}
+const optionsAll = [
+  { value: "all", label: "Любая категория" },
+  { value: "semis", label: "Загатовки" },
+  { value: "main", label: "Основные блюда" },
+  { value: "pasta", label: "Паста и пицца" },
+  { value: "snacks", label: "Закуски" },
+  { value: "soup", label: "Супы" },
+  { value: "salad", label: "Салаты" }
+];
 
-export const FilterSelector: React.FC<FilterSelectorProps> = ({ optionsMenu, filterMenu, disabled, placeholder, value }) => {
-  const onChange = (selectedOption: any) => {
-    filterMenu(selectedOption.value);
-    // console.log(`Option selected:`, selectedOption);
+const semis = [
+  { value: "semisAll", label: "Любое блюдо" },
+  { value: "varenie", label: "Варенье" },
+  { value: "salenie", label: "Саленье" },
+];
+
+const main = [
+  { value: "mainAll", label: "Любое блюдо" },
+  { value: "patate", label: "Картошка" },
+  { value: "pick", label: "Свинина" },
+];
+
+
+export const FilterSelector: React.FC= () => {
+  const [menuAll, setMenuAll] = useState('all');
+  const [menuSemis, setMenuSemis] = useState({value:'edaAll', label:'Любое блюдо'});
+
+  const onChangeMenuAll = (selectedOption: MyOptionType | any ) => {
+    setMenuAll(selectedOption.value)
+    if(selectedOption.value === 'semis') {
+      setMenuSemis({value:'semisAll', label: 'Любое блюдо'});
+    } else if(selectedOption.value === 'main') {
+      setMenuSemis({value:'mainAll', label: 'Любое блюдо'});
+    } else {
+      setMenuSemis({value:'edaAll', label:'Любое блюдо'})
+    }
+    
   };
 
+  const onChangeProducts = (selectedOption: MyOptionType | any) => {
+    setMenuSemis(selectedOption)
+    console.log(selectedOption)
+  };
+
+  const renderSwitch = (param: string) => {
+    switch (param) {
+      case 'semis':
+        return <Select options={semis} styles={selectStyle} onChange={onChangeProducts}  value={null} placeholder={menuSemis.label}/>
+      case 'main':
+        return <Select options={main} styles={selectStyle} onChange={onChangeProducts} value={null} placeholder={menuSemis.label}/>
+      case 'all':
+        return <Select styles={selectStyle} value={null} placeholder={'Любое блюдо'} isDisabled/>
+    }
+  }
+
+  console.log(menuAll, menuSemis.value)
   return (
-    <Select
-      value={value}
-      isDisabled={disabled}
-      options={optionsMenu}
-      styles={selectStyle}
-      placeholder={placeholder}
-      onChange={onChange}
-    />
+    <>
+      <Select
+        options={optionsAll}
+        placeholder={optionsAll[0].label}
+        styles={selectStyle}
+        onChange={onChangeMenuAll}
+      />
+      
+      {
+        renderSwitch(menuAll)
+      }
+    </>
+
   );
 };

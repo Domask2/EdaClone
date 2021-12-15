@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 import styled from "styled-components";
-import {FilterSelector} from "./FilterSelector";
+import { FilterSelector } from "./FilterSelector";
 
 interface FilterMenuWrapperProps {
   toggleFilter: boolean;
@@ -44,67 +44,112 @@ export const FilterGroup = styled.div`
   flex: 1 1 100%;
 `;
 
-const optionsAll = [
-  { value: "all", label: "Любая категория" },
-  { value: "semis", label: "Загатовки" },
-  { value: "main", label: "Основные блюда" },
-  { value: "pasta", label: "Паста и пицца" },
-  { value: "snacks", label: "Закуски" },
-  { value: "soup", label: "Супы" },
-  { value: "salad", label: "Салаты" }
-];
+// const optionsAll = [
+//   { value: "all", label: "Любая категория" },
+//   { value: "semis", label: "Загатовки" },
+//   { value: "main", label: "Основные блюда" },
+//   { value: "pasta", label: "Паста и пицца" },
+//   { value: "snacks", label: "Закуски" },
+//   { value: "soup", label: "Супы" },
+//   { value: "salad", label: "Салаты" }
+// ];
 
-const semisInit = [
-  { value: "semisAll", label: "Любое блюдо" },
-];
+// const semisInit = [
+//   { value: "semisAll", label: "Любое блюдо" },
+// ];
 
-const semis = [
-  { value: "semisAll", label: "Любое блюдо" },
-  { value: "varenie", label: "Варенье" },
-  { value: "salenie", label: "Саленье" },
-];
+// const semis = [
+//   { value: "semisAll", label: "Любое блюдо" },
+//   { value: "varenie", label: "Варенье" },
+//   { value: "salenie", label: "Саленье" },
+// ];
 
-const main = [
-  { value: "semisAll", label: "Любое блюдо" },
-  { value: "patate", label: "Картошка" },
-  { value: "pick", label: "Свинина" },
-];
+// const main = [
+//   { value: "semisAll", label: "Любое блюдо" },
+//   { value: "patate", label: "Картошка" },
+//   { value: "pick", label: "Свинина" },
+// ];
 
 export const FilterMenu: React.FC<FilterMenuProps> = ({ toggleFilter }) => {
 
+  // const [menuAll, setMenuAll] = useState('');
+  // const [menuSemis, setMenuSemis] = useState('');
 
-const [ menuAll, setMenuAll ] = useState('');
+  // const renderSwitch = (param: string) => {
+  //   switch (param) {
+  //     case 'semis':
+  //       return <FilterSelector optionsMenu={semis} defaultMenu={setMenuSemis} />
+  //     case 'main':
+  //       return <FilterSelector optionsMenu={main} defaultMenu={setMenuSemis} />
+  //     case 'all':
+  //       return <FilterSelector optionsMenu={semisInit} disabled={true} value={{value: 'любое юлюдл'}} />
+  //     default:
+  //       return <FilterSelector optionsMenu={semisInit} disabled={true} />
+  //   }
+  // }
 
-const [ menuSemis, setMenuSemis ] = useState('');
+  // console.log(menuAll, menuSemis);
 
-const renderSwitch = (param:string) => {
-  switch(param) {
-    case 'semis':
-      return <FilterSelector optionsMenu={semis} filterMenu={setMenuSemis} placeholder={'Любые блюда'}/>
-    case 'main':
-      return <FilterSelector optionsMenu={main} filterMenu={setMenuSemis} placeholder={'Любые блюда'}/>
-    case 'all':
-      setMenuAll('all');
-      return <FilterSelector value={''} filterMenu={setMenuSemis} disabled={true} placeholder={'Любые блюда'}/>
-    default:
-      return <FilterSelector optionsMenu={semisInit} filterMenu={setMenuSemis} disabled={true} placeholder={'Любые блюда'}/>
-  }
-}
+  // const [all, setAll] = useState('all');
+  // const [allPatate, setAllPatate] = useState<any>();
 
-console.log(menuAll, menuSemis);
-
+  // console.log(all, allPatate)
   return (
     <FilterWrapper toggleFilter={toggleFilter}>
       {toggleFilter && (
         <FilterContainer>
-                <FilterGroup>
-                  <FilterSelector optionsMenu={optionsAll} filterMenu={setMenuAll} placeholder={'Любая категория'}/>
-                  {
-                    renderSwitch(menuAll)
-                  }      
-                </FilterGroup>
+          <FilterGroup>
+            <FilterSelector/>
+
+            {/* <FilterSelector optionsMenu={optionsAll} filterMenu={setMenuAll} defaultMenu={setMenuSemis} />
+            {
+              renderSwitch(menuAll)
+            } */}
+{/* 
+            <select onChange={(e) => {
+              setAll(e.target.value)
+              setAllPatate('')
+            }}>
+              <option value="all ">любая категория</option>
+              <option value="patate">картошка</option>
+              <option value="pomidor">помидор</option>
+              <option value="salenia">саленья</option>
+            </select>
+
+
+            <select onChange={(e) => {
+              setAllPatate(e.target.value)
+              }} >
+              <option value="allPatate ">любое блюдо</option>
+              {
+                all === 'patate' && (<>
+                  <option value="banana">банан</option>
+                  <option value="soap">суп</option>
+                  <option value="ovoh">овощи</option>
+                </>
+                )
+              }
+              {
+                all === 'pomidor' && (<>
+                  <option value="banana">банан</option>
+                  <option value="soap">суп</option>
+                  <option value="ovoh">овощи</option>
+                </>
+                )
+              }
+            </select> */}
+
+
+
+
+
+
+
+
+          </FilterGroup>
         </FilterContainer>
-      )}
-    </FilterWrapper>
+      )
+      }
+    </FilterWrapper >
   );
 };
