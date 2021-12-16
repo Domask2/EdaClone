@@ -22,7 +22,7 @@ const selectStyle: StylesConfig<MyOptionType> = {
     borderBottomColor: 'rgb(217, 217, 217)',
     borderLeftColor: 'rgb(217, 217, 217)',
     padding: '0 0 0 15px',
-    height: '42px',
+    height: '40px',
     font: '12px/40px PT Sans,Helvetica,sans-serif',
     cursor: 'pointer',
     '&:last-of-type': {
@@ -109,40 +109,40 @@ const main = [
   { value: "pick", label: "Свинина" },
 ];
 
+const initFilter = { value: 'edaAll', label: 'Любое блюдо' };
 
-export const FilterSelector: React.FC= () => {
+export const FilterSelector: React.FC = () => {
   const [menuAll, setMenuAll] = useState('all');
-  const [menuSemis, setMenuSemis] = useState({value:'edaAll', label:'Любое блюдо'});
+  const [menuSemis, setMenuSemis] = useState(initFilter);
 
-  const onChangeMenuAll = (selectedOption: MyOptionType | any ) => {
+  const onChangeMenuAll = (selectedOption: MyOptionType | any) => {
     setMenuAll(selectedOption.value)
-    if(selectedOption.value === 'semis') {
-      setMenuSemis({value:'semisAll', label: 'Любое блюдо'});
-    } else if(selectedOption.value === 'main') {
-      setMenuSemis({value:'mainAll', label: 'Любое блюдо'});
-    } else {
-      setMenuSemis({value:'edaAll', label:'Любое блюдо'})
-    }
-    
+    setMenuSemis(initFilter)
+    // if(selectedOption.value === 'semis') {
+    //   setMenuSemis({value:'semisAll', label: 'Любое блюдо'});
+    // } else if(selectedOption.value === 'main') {
+    //   setMenuSemis({value:'mainAll', label: 'Любое блюдо'});
+    // } else {
+    //   setMenuSemis({value:'edaAll', label:'Любое блюдо'})
+    // }
   };
 
   const onChangeProducts = (selectedOption: MyOptionType | any) => {
     setMenuSemis(selectedOption)
-    console.log(selectedOption)
   };
 
   const renderSwitch = (param: string) => {
     switch (param) {
       case 'semis':
-        return <Select options={semis} styles={selectStyle} onChange={onChangeProducts}  value={null} placeholder={menuSemis.label}/>
+        return <Select options={semis} styles={selectStyle} onChange={onChangeProducts} value={null} placeholder={menuSemis.label} />
       case 'main':
-        return <Select options={main} styles={selectStyle} onChange={onChangeProducts} value={null} placeholder={menuSemis.label}/>
+        return <Select options={main} styles={selectStyle} onChange={onChangeProducts} value={null} placeholder={menuSemis.label} />
       case 'all':
-        return <Select styles={selectStyle} value={null} placeholder={'Любое блюдо'} isDisabled/>
+        return <Select styles={selectStyle} value={null} placeholder={'Любое блюдо'} isDisabled />
     }
   }
 
-  console.log(menuAll, menuSemis.value)
+  // console.log(menuAll, menuSemis.value)
   return (
     <>
       <Select
@@ -151,10 +151,23 @@ export const FilterSelector: React.FC= () => {
         styles={selectStyle}
         onChange={onChangeMenuAll}
       />
-      
+
       {
         renderSwitch(menuAll)
       }
+
+      <Select
+        options={optionsAll}
+        placeholder={optionsAll[0].label}
+        styles={selectStyle}
+        
+      />
+      <Select
+        options={optionsAll}
+        placeholder={optionsAll[0].label}
+        styles={selectStyle}
+        
+      />
     </>
 
   );

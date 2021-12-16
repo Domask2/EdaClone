@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
+import { Button } from "../Button";
 import { FilterSelector } from "./FilterSelector";
 
 interface FilterMenuWrapperProps {
@@ -34,6 +35,8 @@ export const FilterContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 18px 0px 19px;
+  display: flex;
+  
 `;
 
 export const FilterGroup = styled.div`
@@ -44,110 +47,91 @@ export const FilterGroup = styled.div`
   flex: 1 1 100%;
 `;
 
-// const optionsAll = [
-//   { value: "all", label: "Любая категория" },
-//   { value: "semis", label: "Загатовки" },
-//   { value: "main", label: "Основные блюда" },
-//   { value: "pasta", label: "Паста и пицца" },
-//   { value: "snacks", label: "Закуски" },
-//   { value: "soup", label: "Супы" },
-//   { value: "salad", label: "Салаты" }
-// ];
+export const FilterButtonGroup = styled.div`
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 1;
+  text-overflow: ellipsis;
+  display: flex;
+  min-width: 33.332%;
+  margin: 0px;
+  flex-basis: 33.332% !important;
+  text-align: right !important;
+  justify-content: right !important;
+  overflow: visible !important;
+`;
 
-// const semisInit = [
-//   { value: "semisAll", label: "Любое блюдо" },
-// ];
+export const SearchWrapper = styled.div`
+  max-height: 450px;
+  background-color: white;
+  overflow: visible;
+  opacity: 1;
+  transition: all 0.4s ease 0s;
+`;
 
-// const semis = [
-//   { value: "semisAll", label: "Любое блюдо" },
-//   { value: "varenie", label: "Варенье" },
-//   { value: "salenie", label: "Саленье" },
-// ];
+export const SearchContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 19px;
 
-// const main = [
-//   { value: "semisAll", label: "Любое блюдо" },
-//   { value: "patate", label: "Картошка" },
-//   { value: "pick", label: "Свинина" },
-// ];
+`;
 
 export const FilterMenu: React.FC<FilterMenuProps> = ({ toggleFilter }) => {
+  const handleFormSearch = () => {
+    console.log('отправка формы')
+  }
 
-  // const [menuAll, setMenuAll] = useState('');
-  // const [menuSemis, setMenuSemis] = useState('');
+  const [toggleSearch, setToggleSearch] = useState(false);
 
-  // const renderSwitch = (param: string) => {
-  //   switch (param) {
-  //     case 'semis':
-  //       return <FilterSelector optionsMenu={semis} defaultMenu={setMenuSemis} />
-  //     case 'main':
-  //       return <FilterSelector optionsMenu={main} defaultMenu={setMenuSemis} />
-  //     case 'all':
-  //       return <FilterSelector optionsMenu={semisInit} disabled={true} value={{value: 'любое юлюдл'}} />
-  //     default:
-  //       return <FilterSelector optionsMenu={semisInit} disabled={true} />
-  //   }
-  // }
-
-  // console.log(menuAll, menuSemis);
-
-  // const [all, setAll] = useState('all');
-  // const [allPatate, setAllPatate] = useState<any>();
-
-  // console.log(all, allPatate)
+  const handleToggleSearch = () => {
+    setToggleSearch(!toggleSearch);
+  }
+  
   return (
     <FilterWrapper toggleFilter={toggleFilter}>
       {toggleFilter && (
         <FilterContainer>
-          <FilterGroup>
-            <FilterSelector/>
+          
+            <FilterGroup>
+              <FilterSelector />
+            </FilterGroup>
+            <FilterButtonGroup>
+              <Button
+                onClick={handleToggleSearch}
+                style={{ marginRight: '35px', letterSpacing: '0px', borderRadius: '0px', cursor: 'pointer', padding: '0 12px' }}
+                border={'1px solid #d9d9d9'}
+                font={'12px / 38px "Roboto", sans-serif'}
+              >
+                Ингредиенты, детали
+              </Button>
+              <Button
+                onClick={handleFormSearch}
+                style={{ backgroundColor: 'rgb(36, 175, 48)', color: 'white', letterSpacing: '0px', borderRadius: '2px', cursor: 'pointer', padding: '0 12px' }}
+                border={'1px solid #d9d9d9'}
+                font={'12px / 38px "Roboto", sans-serif'}
+              >
+                Подобрать рецепты
+              </Button>
+            </FilterButtonGroup>
+        
 
-            {/* <FilterSelector optionsMenu={optionsAll} filterMenu={setMenuAll} defaultMenu={setMenuSemis} />
+        
             {
-              renderSwitch(menuAll)
-            } */}
-{/* 
-            <select onChange={(e) => {
-              setAll(e.target.value)
-              setAllPatate('')
-            }}>
-              <option value="all ">любая категория</option>
-              <option value="patate">картошка</option>
-              <option value="pomidor">помидор</option>
-              <option value="salenia">саленья</option>
-            </select>
+              toggleSearch && (
+                <SearchWrapper>
+                  <SearchContainer>
+                    dsfssgdfg
+                  </SearchContainer>
+                </SearchWrapper>
+              )
+            }
+         
 
-
-            <select onChange={(e) => {
-              setAllPatate(e.target.value)
-              }} >
-              <option value="allPatate ">любое блюдо</option>
-              {
-                all === 'patate' && (<>
-                  <option value="banana">банан</option>
-                  <option value="soap">суп</option>
-                  <option value="ovoh">овощи</option>
-                </>
-                )
-              }
-              {
-                all === 'pomidor' && (<>
-                  <option value="banana">банан</option>
-                  <option value="soap">суп</option>
-                  <option value="ovoh">овощи</option>
-                </>
-                )
-              }
-            </select> */}
-
-
-
-
-
-
-
-
-          </FilterGroup>
         </FilterContainer>
+
       )
       }
     </FilterWrapper >
