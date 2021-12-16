@@ -6,7 +6,7 @@ import { SearchForm } from "./SearchForm";
 import { Overlay } from "./Overlay";
 
 import styled from "styled-components";
-import { Filter } from "./Filter";
+import { Filter } from "./FilterMenu/Filter";
 
 export const StyledHeader = styled.header`
   background: ${({ theme }) => theme.colors.header};
