@@ -20,7 +20,6 @@ export const Container = styled.div`
   margin-left: auto;
   width: 100%;
   @media (max-width: 941px) {
-
   }
 `;
 

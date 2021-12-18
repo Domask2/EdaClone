@@ -10,12 +10,6 @@ export const FilterWrapper = styled.div`
   position: relative;
   z-index: 100;
   width: 100%;
-  margin: 0;
-  background-color: #fff;
-`;
-
-export const FilterTopLine = styled.div`
-  width: 100%;
 `;
 
 export const Filter: React.FC = () => {
@@ -27,10 +21,8 @@ export const Filter: React.FC = () => {
 
   return (
     <FilterWrapper>
-      <FilterTopLine>
-        <ToogleFilter handleToggleFilter={handleToggleFilter}/>
-      </FilterTopLine>
-      <FilterMenu toggleFilter={toggleFilter}/>
+      <ToogleFilter handleToggleFilter={handleToggleFilter} />
+      <FilterMenu toggleFilter={toggleFilter} />
     </FilterWrapper>
   );
 };

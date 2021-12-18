@@ -32,7 +32,7 @@ export const WrapperForm = styled.div`
 
 export const StyledForm = styled.form`
   width: 100%;
-  height: 40px;
+  height: auto;
   position: relative;
   display: flex;
   align-items: center;
