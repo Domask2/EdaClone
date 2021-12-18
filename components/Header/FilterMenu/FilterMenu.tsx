@@ -38,7 +38,7 @@ export const FilterContainer = styled.div`
   margin-right: auto;
   padding: 18px 0px 19px;
   display: flex;
-  
+  align-items: center;
 `;
 
 export const FilterGroup = styled.div`
@@ -56,6 +56,7 @@ export const FilterButtonGroup = styled.div`
   text-overflow: ellipsis;
   display: flex;
   min-width: 33.332%;
+  height: 40px;
   margin: 0px;
   flex-basis: 33.332% !important;
   text-align: right !important;
@@ -103,17 +104,17 @@ export const FilterMenu: React.FC<FilterMenuProps> = ({ toggleFilter }) => {
             <FilterButtonGroup>
               <Button
                 onClick={handleToggleSearch}
-                style={{ marginRight: '35px', letterSpacing: '0px', borderRadius: '0px', cursor: 'pointer', padding: '0 12px' }}
+                style={{ marginRight: '35px', letterSpacing: '0px', borderRadius: '0px', cursor: 'pointer', padding: '0 20px' }}
                 border={'1px solid #d9d9d9'}
-                font={'12px / 38px "Roboto", sans-serif'}
+                font={'11px / 38px "Roboto", sans-serif'}
               >
                 Ингредиенты, детали
               </Button>
               <Button
                 onClick={handleFormSearch}
-                style={{ backgroundColor: 'rgb(36, 175, 48)', color: 'white', letterSpacing: '0px', borderRadius: '2px', cursor: 'pointer', padding: '0 12px' }}
+                style={{ backgroundColor: 'rgb(36, 175, 48)', color: 'white', letterSpacing: '0px', borderRadius: '2px', cursor: 'pointer', padding: '0 20px' }}
                 border={'1px solid #d9d9d9'}
-                font={'12px / 38px "Roboto", sans-serif'}
+                font={'11px / 38px "Roboto", sans-serif'}
               >
                 Подобрать рецепты
               </Button>

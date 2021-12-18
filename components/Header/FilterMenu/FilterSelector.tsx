@@ -24,7 +24,7 @@ const selectStyle: StylesConfig<MyOptionType> = {
     padding: '0 0 0 15px',
     height: '40px',
     font: '12px/40px PT Sans,Helvetica,sans-serif',
-    cursor: 'pointer',
+    cursor: state.isDisabled ? 'default' : 'pointer',
     '&:last-of-type': {
       borderRight: '1px solid rgb(217, 217, 217)',
     },
@@ -33,9 +33,10 @@ const selectStyle: StylesConfig<MyOptionType> = {
     },
   }),
 
-  placeholder: (provided) => ({
+  placeholder: (provided, state) => ({
     ...provided,
-    color: 'black',
+    color: state.isDisabled ? '#e3e3e3' : 'black',
+
   }),
 
   input: (provided) => ({
@@ -69,15 +70,18 @@ const selectStyle: StylesConfig<MyOptionType> = {
 
   menu: (provide) => ({
     ...provide,
-
     font: '12px/40px PT Sans,Helvetica,sans-serif',
-    paddingBottom: '20px',
+    'div': {
+    },
     'div div': {
       backgroundColor: 'transparent',
       marginBottom: '-25px',
       color: 'black',
+
       '&:first-of-type': {
         backgroundColor: 'white',
+      },
+      '&:last-of-type': {
       },
       '&:hover, &:active, &:focus': {
         backgroundColor: 'transparent',
@@ -86,7 +90,6 @@ const selectStyle: StylesConfig<MyOptionType> = {
     }
   })
 };
-
 interface FilterSelectProps {
   option?: MyOptionType[],
   handleSelect?: any,

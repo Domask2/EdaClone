@@ -13,6 +13,10 @@ const categories = [
     { value: "semis", label: "Загатовки" },
     { value: "main", label: "Основные блюда" },
     { value: "pasta", label: "Паста и пицца" },
+    { value: "all", label: "Любая категория" },
+    { value: "semis", label: "Загатовки" },
+    { value: "main", label: "Основные блюда" },
+    { value: "pasta", label: "Паста и пицца" },
 ];
 
 const semis = [
