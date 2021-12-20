@@ -66,7 +66,17 @@ const selectStyle: StylesConfig<MyOptionType> = {
     },
   }),
 
-  menu: (provide) => ({
+  multiValue: (provided) => ({
+    ...provided,
+    alignItems: 'center',
+    backgroundColor: 'hsl(118deg 48% 53%)',
+    height: '23px',
+    marginRight: '5px',
+    marginTop: '5px',
+  }),
+
+
+  menu: (provide, state) => ({
     ...provide,
     font: "12px/40px PT Sans,Helvetica,sans-serif",
     div: {},
@@ -85,13 +95,18 @@ const selectStyle: StylesConfig<MyOptionType> = {
       },
     },
   }),
+
 };
+
 interface FilterSelectProps {
   option?: MyOptionType[];
   handleSelect?: any;
   valueSelect?: null;
   placeHolderSelect?: string;
   disabled?: boolean;
+  isMultiSelect?: boolean;
+  componentsSelector? : any,
+  styleSelector? : any
 }
 
 export const FilterSelector: React.FC<FilterSelectProps> = ({
@@ -100,15 +115,20 @@ export const FilterSelector: React.FC<FilterSelectProps> = ({
   valueSelect,
   placeHolderSelect,
   disabled,
+  isMultiSelect,
+  componentsSelector,
+  styleSelector
 }) => {
   return (
     <Select
-      options={option}
       styles={selectStyle}
+      components={componentsSelector}
+      options={option}
       onChange={handleSelect}
       value={valueSelect}
       placeholder={placeHolderSelect}
       isDisabled={disabled}
+      isMulti={isMultiSelect}
     />
   );
 };

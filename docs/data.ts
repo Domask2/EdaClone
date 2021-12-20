@@ -1,6 +1,7 @@
 export type MyOptionType = {
   label: string;
   value: string;
+  isDisabled? : boolean;
 };
 
 export const categories: MyOptionType[] = [

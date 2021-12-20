@@ -43,28 +43,22 @@ export const FilterItemSelect: React.FC<FilterGroupProps> = ({ handleToggleSearc
       <FilterButtonGroup>
         <Button
           onClick={handleToggleSearch}
-          style={{
-            marginRight: "35px",
-            letterSpacing: "0px",
-            borderRadius: "0px",
-            cursor: "pointer",
-            padding: "0 20px",
-          }}
+          margin={'0 35px 0 0'}
+          padding={'0 20px'}
+          letSpace={'0px'}
           border={"1px solid #d9d9d9"}
+          borderRadius={'0px'}
           font={'11px / 38px "Roboto", sans-serif'}
         >
           Ингредиенты, детали
         </Button>
         <Button
           onClick={handleFormSearch}
-          style={{
-            backgroundColor: "rgb(36, 175, 48)",
-            color: "white",
-            letterSpacing: "0px",
-            borderRadius: "2px",
-            cursor: "pointer",
-            padding: "0 20px",
-          }}
+          color={'white'}
+          backgroundColor={"rgb(36, 175, 48)"}
+          borderRadius={'2px'}
+          padding={'0 20px'}
+          letSpace={'0px'}
           border={"1px solid #d9d9d9"}
           font={'11px / 38px "Roboto", sans-serif'}
         >
