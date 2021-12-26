@@ -93,7 +93,7 @@ export const FilterSelectGroup: React.FC = () => {
 
       <FilterSelector
         option={menu}
-        placeHolderSelect={"Любая меню"}
+        placeHolderSelect={"Любое меню"}
         handleSelect={onChangeAll}
       />
     </>

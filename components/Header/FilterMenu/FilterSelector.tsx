@@ -6,10 +6,10 @@ type MyOptionType = {
   value: string;
 };
 
-const selectStyle: StylesConfig<MyOptionType> = {
+const selectStyle: StylesConfig<MyOptionType, false> = {
   control: (provided, state) => ({
     ...provided,
-    width: "160px",
+    width: '100%',
     position: "relative",
     borderColor: "rgb(230, 230, 230)",
     boxShadow: "none",
@@ -30,6 +30,11 @@ const selectStyle: StylesConfig<MyOptionType> = {
     "&:hover": {
       color: "black",
     },
+  }),
+
+  container: (provided, state:any) => ({
+    ...provided,
+    width: state.selectProps.width ? state.selectProps.width : '160px',
   }),
 
   placeholder: (provided, state) => ({
@@ -76,7 +81,7 @@ const selectStyle: StylesConfig<MyOptionType> = {
   }),
 
 
-  menu: (provide, state) => ({
+  menu: (provide) => ({
     ...provide,
     font: "12px/40px PT Sans,Helvetica,sans-serif",
     div: {},
@@ -106,7 +111,8 @@ interface FilterSelectProps {
   disabled?: boolean;
   isMultiSelect?: boolean;
   componentsSelector? : any,
-  styleSelector? : any
+  styleSelector? : any,
+  width?: string
 }
 
 export const FilterSelector: React.FC<FilterSelectProps> = ({
@@ -117,7 +123,7 @@ export const FilterSelector: React.FC<FilterSelectProps> = ({
   disabled,
   isMultiSelect,
   componentsSelector,
-  styleSelector
+  width
 }) => {
   return (
     <Select
@@ -129,6 +135,7 @@ export const FilterSelector: React.FC<FilterSelectProps> = ({
       placeholder={placeHolderSelect}
       isDisabled={disabled}
       isMulti={isMultiSelect}
+      width={width}
     />
   );
 };
